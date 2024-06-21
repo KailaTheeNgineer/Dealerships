@@ -2,6 +2,7 @@ package com.pluralsight;
 
 import java.sql.Connection;
 import java.sql.*;
+import java.util.List;
 import java.util.Scanner;
 
 public class Dealership {
@@ -132,6 +133,13 @@ public class Dealership {
 
 
             } else if (userInput.equalsIgnoreCase("3")) {
+
+               DealershipDataManager ddm = new DealershipDataManager();
+                System.out.println("Search a Vehicle by Make: ");
+                String userMakeSearch = myScanner.nextLine();
+                List<Vehicle> foundVehicles = ddm.getVehicleByMake(userMakeSearch);
+
+                System.out.println(foundVehicles);
 
 
             } else if (userInput.equalsIgnoreCase("4")) {
